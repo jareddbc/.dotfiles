@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require "sinatra"
+require "launchy"
+
+set :public, '.'
+
+ARGV.each do |file|
+  Launchy.open(File.join("http://localhost:4567", file))
+end
